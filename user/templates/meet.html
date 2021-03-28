@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <title>MEET</title>
+  </head>
+  <style>
+    body {
+      background-image: url("{% static "svg/signup2.svg"%}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    h1 {
+      font-size: 60px;
+      text-align: center;
+    }
+    body {
+      background-color: #87cefa;
+    }
+    .card {
+      border-radius: 15px;
+      margin-bottom: 50px;
+
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2),
+        0 40px 20px 0px rgba(0, 0, 0, 0.19);
+      font-size: 20px;
+      width: 50%;
+      margin-left: 50%;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    .btn {
+      background-color: black;
+      font-size: 20px;
+      width: 30%;
+      height: 60%;
+      color: white;
+      margin-top: 10px;
+    }
+    label {
+      padding-top: 30px;
+      padding-left: 10px;
+    }
+    input,
+    select {
+      margin-top: 30px;
+      margin-left: 10px;
+    }
+    #phone {
+      width: 50%;
+    }
+    .container {
+      text-align: center;
+      margin-left: 10px;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand font-weight-bold" href="home.html">
+        AAPKA SAHARA
+        <nav
+          class="nav nav-pills flex-column flex-sm-row justify-content-end"
+        ></nav>
+      </a>
+    </nav>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h1 class="card-title">SCHEDULE</h1>
+              <form
+                action="{% url 'schedule' %}"
+                enctype="multipart/form-data"
+                method="post"
+              >
+                {% csrf_token %}
+                <div class="form-row text-black">
+                  <label for="vol">Choose your nearest Volunteer:</label>
+                  <select id="vol" name="vol">
+                    {% for s,v, ve, vc, uid in z %}
+                    <option value="{{uid}}">{{v}}</option>
+                    {%endfor%}
+                  </select>
+                  <input type="hidden" id="mail" name="mail" value="{{mail}}" />
+                  <br />
+                  <label for="birthdaytime">Time of Meeting:</label>
+                  <input
+                    type="datetime-local"
+                    id="meetdate"
+                    name="Meetingtime"
+                  />
+                </div>
+
+                <div class="form-row text-black">
+                  <label for="phone">Phone number</label>
+                  <br /><input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    pattern="[1-9]{1}[0-9]{9}"
+                    placeholder="PHONE NUMBER"
+                    required
+                  />
+                </div>
+                <div class="form-row text-black">
+                  <label
+                    >You can call on the provided contact number to talk to your
+                    companion on the time of meeting or decide the meeting
+                    location.</label
+                  >
+                </div>
+                <div class="text-center">
+                  <button type="submit" id="submit" class="btn btn-dark">
+                    SCHEDULE
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

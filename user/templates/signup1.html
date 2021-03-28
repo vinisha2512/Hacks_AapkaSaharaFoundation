@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+  {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>SIGNUP</title>
+  </head>
+  <style>
+  h1{font-size: 60px;}
+  body{
+	
+	background-image: url("{% static "svg/loginnew.svg"%}");
+	background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+	.card{
+	border-radius: 15px;
+	margin-bottom:20px;
+	margin-top:10%;
+	padding-bottom: 50px;
+	 box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 40px 20px 0px rgba(0, 0, 0, 0.19);
+	 font-size: 20px;
+	 width:60%;
+	 margin-left:20%;
+	 font-weight-bold;
+	 text-align:center;
+	 padding-left:10px;
+	 }
+	.container{
+	margin-top:60px;
+	}
+	.btn{
+background-color: black;
+font-size: 20px;
+width:30%;
+height:60%;
+color: white;
+}
+h1{ text-align:center;}
+	</style>
+  <body>
+  <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand font-weight-bold" href="home.html">
+
+    AAPKA SAHARA
+  <nav class="nav nav-pills flex-column flex-sm-row justify-content-end">
+  <a class="flex-sm-fill text-sm-center nav-link text-white" href="login">LOGIN</a>
+  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="signup">SIGNUP</a>
+  <a class="flex-sm-fill text-sm-center nav-link text-white" href="{%url "aboutus"%}">ABOUT</a>
+  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">CONTACT</a>
+</nav>
+  </a>
+</nav>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+
+    <div class="col-md-auto ">
+	<div class="card mb-3" >
+  <div class="row no-gutters">
+
+    <div class="col-md-auto">
+      <div class="card-body">
+        <h1 class="heading text-black text-center">SIGNUP</h1>
+        <form action="{%url "aadharveri"%}" enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+    <div class="form-row text-black" style="padding:20px">
+        <label for="aadhardoc" style="padding:10px; margin-left:20px">Upload your AADHAR CARD QR CODE<br>(Please note:File should be an image)</label>
+
+        <input type="file" class="form-control-file" style="margin-left:40px; padding:20px" id="def" name="file" accept="image/*" required>
+    </div>
+
+  
+  
+  </div>
+  <div class="text-center">
+  <button type="submit" id="submit" class="btn btn-dark">VERIFY</button>
+  </div>
+  
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  </body>
+</html>

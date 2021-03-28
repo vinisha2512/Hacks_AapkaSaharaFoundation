@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>FILES</title>
+	<style>
+	body{
+	
+	background-image: url({%static "svg/1.svg"%});
+	background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+	.card{
+background-color: #000000;
+border-radius: 10px;
+margin-top: 40%;
+ padding-top: 10px;
+  
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 40px 20px 0px rgba(0, 0, 0, 0.19);
+  margin-left:20%
+}
+.form-inline{
+background-color: #000000;
+border-radius: 10px;
+margin-top: 50px;
+ padding-top: 20px;
+  padding-bottom: 20px;
+color: white;
+padding-left: 80px;
+}
+.card-text{
+color: white;
+}
+
+.card-title{
+color: white;
+font-weight: bold;
+text-align: center;
+padding-bottom: 10px;
+}
+.btn {
+  background-color: #FFFFFF;
+  color: black;
+  font-weight:bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+  width: 100%;
+ margin-top: 40px;
+margin-bottom: 0px;
+}
+.header{
+margin-top:  20px;
+margin-bottom: 20px;
+text-align: center;
+color: black;
+font-weight: bold;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+#bt{
+margin-left: 20px;
+}
+#def{
+margin-left: 20px;
+}
+.card{
+background-color: #1b4965;
+width: 70%
+}
+
+
+</style>
+  </head>
+  <body>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand font-weight-bold" href="">AAPKA SAHARA</a>
+
+  <div class="nav nav-pills flex-column flex-sm-row justify-content-end" id="navbarSupportedContent">
+
+  <a class="flex-sm-fill text-sm-center nav-link text-white " href="teacher.html">DASHBOARD</a>
+</div>
+</a>
+</nav>
+<div class="container">
+
+  <div class="row">
+  <div class="col">
+    <div class="card" id="events">
+      <div class="card-body">
+        <h2 class="card-title">EVENTS</h2>
+        <p class="card-text"></p>
+        <form action="{%url "events"%}" method="post"><button class="btn btn-primary" type="submit" id="events">CHECK</form>
+        {% csrf_token %}
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" id="meet">
+      <div class="card-body">
+        <h2 class="card-title">MEET</h2>
+        <p class="card-text"></p>
+        <form action="{%url "meet"%}" method="post"><button class="btn btn-primary" type="submit" id="meet">CHECK</form>
+        {% csrf_token %}
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" id="vol">
+      <div class="card-body">
+        <h2 class="card-title">VOLUNTEERS NEAR YOU</h2>
+        <p class="card-text"></p>
+        <form action="{%url "vnear"%}" method="post"><button class="btn btn-primary" type="submit" id="vol">CHECK</form>
+        {% csrf_token %}
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+
+
+
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

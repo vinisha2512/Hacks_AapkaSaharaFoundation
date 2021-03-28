@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <title>LOGIN</title>
+    <style>
+            body{
+
+      	background-image: url("{% static "svg/loginnew.svg"%}");
+      	background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+      }
+            .card {
+              border-radius: 10px;
+              margin-top: 40px;
+              box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2),
+                0 40px 20px 0px rgba(0, 0, 0, 0.19);
+            }
+            .container {
+              margin-top: 60px;
+            }
+            .card-body {
+              margin-top: 0px;
+            }
+
+            .heading {
+              margin-top: 10px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              font-weight: bold;
+            }
+            .btn {
+              background-color: black;
+              margin-top: 20px;
+              width: 60%;
+              color: white;
+            }
+      	  label{font-size:20px;font-weight-bold;}
+      	  h1{font-size:50px;font-weight-bold;padding-bottom:5px;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand font-weight-bold" href="home.html">
+        TECH KNIGHTS
+        <nav class="nav nav-pills flex-column flex-sm-row justify-content-end">
+          <a
+            class="flex-sm-fill text-sm-center nav-link text-white active"
+            href="login"
+            >LOGIN</a
+          >
+          <a
+            class="flex-sm-fill text-sm-center nav-link text-white"
+            href="signup"
+            >SIGNUP</a
+          >
+          <a class="flex-sm-fill text-sm-center nav-link text-white" href="{%url "aboutus"%}"
+            >ABOUT</a
+          >
+          <a class="flex-sm-fill text-sm-center nav-link text-white" href="#"
+            >CONTACT</a
+          >
+        </nav>
+      </a>
+    </nav>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <div class="card" style="width: 25rem">
+            <h1 class="heading text-black text-center">LOGIN</h1>
+            <div class="card-body">
+              <form action="login/" method="post">
+                {% csrf_token %}
+                <div class="form-group text-black">
+                  <label for="inputEmail4">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail4"
+                    name="email"
+                    placeholder="ENTER YOUR EMAIL ID"
+                    required
+                  />
+                </div>
+                <div class="form-group text-black">
+                  <label for="inputPassword4">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword4"
+                    name="password"
+                    placeholder="PASSWORD"
+                    required
+                  />
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-center btn-lg"
+                    data-toggle="button"
+                    aria-pressed="false"
+                  >
+                    LOGIN
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
